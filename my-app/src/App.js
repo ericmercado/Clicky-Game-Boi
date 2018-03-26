@@ -7,7 +7,7 @@ import "./App.css";
 
 let correctGuesses = 0;
 let bestScore = 0;
-let clickMessage = "Click on an image to earn points, but don't click on any of them more than once!";
+let clickMessage = "Click on an image to earn points, but don't click on any of them more than once. But alas, you might be too INCOMPETENT TO COMPLETE THIS!";
 
 class App extends Component {
     
@@ -35,7 +35,7 @@ class App extends Component {
             console.log ("Best Score: " + bestScore);
 
             correctGuesses = 0;
-            clickMessage = "Dang! You already clicked on that one! Now you have to start over!"
+            clickMessage = "You already clicked on that one! Now you have to start over, you complete MONGOLOID!"
 
             for (let i = 0 ; i < matches.length ; i++){
                 matches[i].clicked = false;
@@ -54,7 +54,7 @@ class App extends Component {
             // increment the appropriate counter
             correctGuesses++;
             
-            clickMessage = "Great! You haven't click on that one yet! Keep going!";
+            clickMessage = "You haven't click on that one yet! You FINALLY DID SOMETHING!";
 
             if (correctGuesses > bestScore){
                 bestScore = correctGuesses;
@@ -77,7 +77,7 @@ class App extends Component {
             correctGuesses = 0;
 
             // Egg on the user to play again
-            clickMessage = "WOW!!! You got ALL of them!!! Now, let's see if you can do it again!";
+            clickMessage = "You got ALL OF THEM!!! Now, let's see if you can do it again,idiot!";
             bestScore = 12;
             this.setState({ bestScore });
             
