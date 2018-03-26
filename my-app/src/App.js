@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import ImageCard from './components/ImageCard';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+
 class App extends Component {
+  
+  state={
+    counter: 0,
+    topScore: 0
+  };
+
+  scoresToParent = (counter, topScore) => {
+    this.setState({
+      counter: counter,
+      topScore: topScore
+    })
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+    <div>
+      <Navbar 
+        counter= {this.state.counter}
+        topScore= {this.state.topScore}
+      />
+      <Header />
+      <ImageCard parentCallback={this.scoresToParent} />
+    </div>
     );
   }
 }
